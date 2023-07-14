@@ -9,17 +9,19 @@
       src="https://kit.fontawesome.com/19ee356dde.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
     <div class="container">
       <h1>Password Generator</h1>
       <div class="display-container">
-        <input readonly placeholder="password" data-PasswordDisplay />
+        <input readonly placeholder="password" data-PasswordDisplay class="display" />
         <!--dataPasswordDisplay is custom attribute  -->
         <button>
           <span data-copyMsg></span>
-          <i class="fa-solid fa-copy"></i>
+          <!-- <i class="fa-solid fa-copy"></i> -->
+          copy text
         </button>
       </div>
       <div class="input-container">
@@ -28,28 +30,28 @@
           <p data-lengthNumber>0</p>
         </div>
         <!-- slider -->
-        <input type="range" min="1" max="20" step="1" data-lengthSlider />
+        <input type="range" min="1" max="20" step="1" data-lengthSlider class="slider"/>
         <!-- checkboxes -->
-        <div>
+        <div class="check">
           <input type="checkbox" id="uppercase" />
           <label for="uppercase">includes Uppercase letter</label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="lowercase" />
           <label for="lowercase">includes Lowercase letter</label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="numbers" />
           <label for="numbers">includes Numbers </label>
         </div>
-        <div>
+        <div class="check">
           <input type="checkbox" id="symbols" />
           <label for="symbols">includes symbols </label>
         </div>
         <!-- Password Strength section -->
         <div class="strength-container">
           <p>Strength</p>
-          <div data-indicator></div>
+          <div data-indicator class="indicator"></div>
         </div>
         <!-- generate password button -->
         <button class="generate-button">generate password</button>

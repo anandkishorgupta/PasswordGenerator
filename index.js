@@ -18,6 +18,8 @@ let passwordLength = 10;
 let checkCount = 0;
 let symbols = "!@#$%^&*()_+{}[]|\\;:'\",./<>?`~";
 
+setIndicator("#ccc");
+
 function shufflePassword(array) {
     // fisher yates method
     for (let i = Array.length - 1; i > 0; i--) {
@@ -43,7 +45,7 @@ function handleSlider() {
 }
 handleSlider();
 
-function setIndicator() {
+function setIndicator(color) {
     indicator.style.backgroundColor = color;
 }
 
@@ -134,6 +136,11 @@ copyBtn.addEventListener("click", () => {
         copyContent()
     }
 })
+
+
+
+
+
 
 generateBtn.addEventListener("click", () => {
 
