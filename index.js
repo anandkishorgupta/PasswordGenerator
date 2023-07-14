@@ -42,11 +42,15 @@ function handleSlider() {
     // slider value
     inputSlider.value = passwordLength;
     lengthDisplay.innerText = passwordLength;
+    const min=inputSlider.min;
+    const max=inputSlider.max;
+    inputSlider.style.backgroundSize=((passwordLength-min)*100/(max-min))+"% 100%"
 }
 handleSlider();
 
 function setIndicator(color) {
     indicator.style.backgroundColor = color;
+    indicator.style.boxShadow=` 0 0 12px 1px ${color}`
 }
 
 function getRandInteger(min, max) {
@@ -108,6 +112,8 @@ async function copyContent() {
     }, 2000)
 }
 
+
+
 function handleCheckBoxChange() {
     checkCount = 0;
     allCheckBox.forEach((checkbox) => {
@@ -125,6 +131,7 @@ function handleCheckBoxChange() {
 allCheckBox.forEach((checkbox) => {
     checkbox.addEventListener("change", handleCheckBoxChange)
 })
+
 
 inputSlider.addEventListener("input", (e) => {
     passwordLength = e.target.value;
@@ -176,6 +183,7 @@ generateBtn.addEventListener("click", () => {
         funcArr.push(generateSymbol);
 
     }
+
     // compulsory addition
     for (let i = 0; i < funcArr.length; i++) {
         password += funcArr[i]();
